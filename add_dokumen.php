@@ -1,3 +1,7 @@
+<?php
+	$get_stopword = file_get_contents("stopword.json");
+	$stopword = json_decode($get_stopword,true);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +26,14 @@
 		</nav>
 
 				<h2 class="text-center">Daftar Dokumen</h2>
-					<div class="add float-right">
-				<div class="bg-info">
+				<div class="add float-right">
+					<div>
 						<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i>Tambah Artikel</button>
+								<!-- Button trigger modal -->
+						<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#stopword">
+						Stopword
+						</button>
+						<a class="btn btn-info btn-sm" href="_tokenisasi.php">Text Processing</a>
 					</div>
 				</div>
 				<table class="table table-striped">
@@ -33,6 +42,7 @@
 				      <th scope="col">No</th>
 				      <th scope="col">Judul</th>
 				      <th scope="col">Isi</th>
+				      <th scope="col">Kode</th>
 				      <th scope="col">Aksi</th>
 				    </tr>
 				  </thead>
@@ -46,6 +56,7 @@
 						    	echo '<td>'.$no.'</td>';
 							    echo '<td>'.$row['Judul'].'</td>';
 							    echo '<td>'.substr_replace($row['dokumen'],"...",100).'</td>';
+							    echo '<td>'.$row['nm_dk'].'</td>';
 							    ?>
 							    <td><a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Ingin Hapus?')" href="hapus.php?idDock=<?= $row['Id'] ?>"><i class="fa fa-trash"></i></a>
 							    <?php
@@ -90,6 +101,38 @@
 		</div>
 		</div>
 		</div>
+
+	<!-- Modal -->
+	
+	<div class="modal fade" id="stopword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-scrollable">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Stopword Tala</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+		<table class="table table-sm">
+		<thead>
+			<tr>
+			<th class="text-center bg-primary text-white" scope="col">Daftar Kata</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php foreach($stopword as $list) : ?>
+			<tr>
+			<td class="text-center"><?= $list; ?></td>
+			</tr>
+		<?php endforeach; ?>
+		</tbody>
+	</table>
+		</div>
+
+		</div>
+	</div>
+	</div>
 	</div>
 
 <script type="text/javascript" src="assets/jquery/dist/jquery.min.js"></script>

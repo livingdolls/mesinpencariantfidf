@@ -78,7 +78,7 @@
 						<div style="padding: 20px 0 0 0;">
 							<button class="btn btn-primary btn-sm btn-outline" data-toggle="modal" data-target=".bd-vector" >Panjang Vector</button>
 							<button class="btn btn-warning btn-sm btn-outline" data-toggle="modal" data-target=".bd-bobot" >Bobot Keyword</button>
-							<a class="btn btn-danger btn-sm btn-outline" href="bobotDokumen.php">Bobot Dokumen</a>
+							<a class="btn btn-danger btn-sm btn-outline" href="bobotDokumen.php">Indexing</a>
 						</div>
 					</div>
 				</div>
@@ -125,7 +125,7 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Hasil Perhitungan Vector</h5>
+					<h5 class="modal-title">Bobot Dokumen</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -134,8 +134,8 @@
 					<table class="table table-sm">
 					  <thead class="bg-primary">
 					    <tr>
-					      <th scope="col">Dokumen Id</th>
-					      <th scope="col">Panjang</th>
+					      <th class="text-white" scope="col">Dokumen Id</th>
+					      <th class="text-white" scope="col">Panjang</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -159,19 +159,18 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Hasil Perhitungan Bobot</h5>
+					<h5 class="modal-title">Bobot Keyword</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<div class="text-center"><h5>Bobot Keyword</h5></div>
 					<table class="table table-sm">
 					  <thead class="bg-primary">
 					    <tr>
-					      <th scope="col">Term</th>
-					      <th scope="col">Jumlah</th>
-					      <th scope="col">Bobot</th>
+					      <th class="text-white" scope="col">Term</th>
+					      <th class="text-white" scope="col">Jumlah</th>
+					      <th class="text-white" scope="col">Bobot</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -191,8 +190,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
+	</div>
 <script type="text/javascript" src="assets/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>

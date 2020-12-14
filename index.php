@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="referrer" content="strict-origin" />
-	<title>Pencarian Dokumen</title>
+	<title>Sistem Temu Kembali Informasi</title>
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.min.css">
 </head>
@@ -39,7 +39,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">STKI</a>
+    <a class="navbar-brand text-primary text-weight-bold" href="#">STKI</a>
 	<a class="float-left btn btn-primary btn-sm" href="add_dokumen.php"><i class="fa fa-book"></i> Dokumen</a>
   </div>
 </nav>
@@ -48,7 +48,7 @@
 			<div class="col-6">
 				<form method="GET" action="proses_cari.php">
 					<div class="text-center" style="margin-bottom: 50px">
-						<h1>Pencarian Dokumen</h1>
+						<h1 class="text-primary">Pencarian Dokumen</h1>
 					</div>
 					<div class="input-group mb-3 search_form">
 					  <input type="text" class="form-control" placeholder="Masukkan Keyword" name="search" autocomplete="off">
